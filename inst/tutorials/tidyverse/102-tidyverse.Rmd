@@ -4,7 +4,7 @@ output:
   learnr::tutorial:
     progressive: true
     allow_skip: true
-    css: "css/learnr.css"
+    css: "css/tutorials.css"
 runtime: shiny_prerendered
 ---
     
@@ -15,7 +15,7 @@ This is a short tutorial on how to use the tidyverse family of packages in R. Th
 Here's a schematic of the workflow of data analysis (from the textbook [R for Data Science](http://r4ds.had.co.nz/), a fantastic resource for learning all things tidyverse). This tutorial introduces first the Import and Transform components of data analysis and then the Tidy component (see the other tutorials for more on the Visualize and Communicate components).
 
 ```{r data-science, echo=FALSE}
-knitr::include_graphics("images/tidyverse/data-science.png")
+knitr::include_graphics("images/data-science.png")
 ```
 
 __Learning goals__
@@ -34,8 +34,8 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,
                       exercise.cap = "Exercise")
 
 mtcars <- as_tibble(mtcars)
-sgf <- read_csv("www/data/tidyverse/stiller_scales_data.csv")
-sgf_wide <- read_csv("www/data/tidyverse/sgf_wide.csv")
+sgf <- read_csv("www/data/stiller_scales_data.csv")
+sgf_wide <- read_csv("www/data/sgf_wide.csv")
 ```
 
 ###
@@ -47,7 +47,7 @@ sgf_wide <- read_csv("www/data/tidyverse/sgf_wide.csv")
 Here's the basic idea: In tidy data, every row is a single **observation** (trial), and every column describes a **variable** with some **value** describing that trial.
 
 ```{r tidyverse-tidy-1, echo=FALSE}
-knitr::include_graphics("images/tidyverse/tidy-1.png")
+knitr::include_graphics("images/tidy-1.png")
 ```
 
 ###
@@ -103,7 +103,7 @@ Reading `round(mean(gpm(mtcars$mpg)))` out loud involves reading from the center
 Next we are going to put the pipe into action in our analysis of a real dataset. Here are the raw data from Stiller et al. (2015), a simple developmental language study that we can use as our example. In that study, children met a puppet named "Furble." Furble would show them three pictures, e.g. face, face with glasses, face with hat and glasses and would say "my friend has glasses." They then had to choose which face was Furble's friend. (The prediction was that they'd choose *glasses and not a hat*, indicating that they'd made a correct pragmatic inference). In the control condition, Furble just mumbled, so the expectation was that children would pick at chance. Here's an example of the stimuli:
 
 ```{r tidyverse-furble, echo=FALSE}
-knitr::include_graphics("images/tidyverse/furble.png")
+knitr::include_graphics("images/furble.png")
 ```
 
 ###
@@ -350,7 +350,7 @@ Specifically, `pivot_longer()` takes three arguments:
 
 <!--
 ```{r tidyverse-tidy-8, echo = FALSE, fig.margin=TRUE, fig.cap="Pivoting into a longer form. (from R for Data Science)"}
-knitr::include_graphics("images/tidyverse/tidy-8.png")
+knitr::include_graphics("images/tidy-8.png")
 ```
 -->
 
@@ -369,7 +369,7 @@ We can compare this data frame to `sgf` and see that we've recovered the origina
 
 <!--
 ```{r tidyverse-tidy-9, echo = FALSE, fig.margin=TRUE, fig.cap="Pivoting into a wider form. (from R for Data Science)"}
-knitr::include_graphics("images/tidyverse/tidy-9.png")
+knitr::include_graphics("images/tidy-9.png")
 ```
 -->
 

@@ -96,7 +96,7 @@ if (window.hljs) {
 </style>
 <!-- end tabsets -->
 
-<link rel="stylesheet" href="css/learnr.css" type="text/css" />
+<link rel="stylesheet" href="css/tutorials.css" type="text/css" />
 
 </head>
 
@@ -127,7 +127,7 @@ fantastic resource for learning all things tidyverse). This tutorial
 introduces first the Import and Transform components of data analysis
 and then the Tidy component (see the other tutorials for more on the
 Visualize and Communicate components).</p>
-<p><img src="images/tidyverse/data-science.png" /><!-- --></p>
+<p><img src="images/data-science.png" /><!-- --></p>
 <p><strong>Learning goals</strong></p>
 <ul>
 <li>Explain what “tidy data” is and why it’s a useful uniform format for
@@ -151,7 +151,7 @@ own way.</p>
 <strong>observation</strong> (trial), and every column describes a
 <strong>variable</strong> with some <strong>value</strong> describing
 that trial.</p>
-<p><img src="images/tidyverse/tidy-1.png" /><!-- --></p>
+<p><img src="images/tidy-1.png" /><!-- --></p>
 </div>
 <div id="section-section-2" class="section level3">
 <h3></h3>
@@ -230,7 +230,7 @@ face was Furble’s friend. (The prediction was that they’d choose
 pragmatic inference). In the control condition, Furble just mumbled, so
 the expectation was that children would pick at chance. Here’s an
 example of the stimuli:</p>
-<p><img src="images/tidyverse/furble.png" /><!-- --></p>
+<p><img src="images/furble.png" /><!-- --></p>
 <div id="section-section-4" class="section level3">
 <h3></h3>
 <p>We are going to manipulate these data using “verbs” from the
@@ -520,7 +520,7 @@ column, in this case, the accuracy of the response
 (<code>correct</code>).</li>
 </ul>
 <!--
-![Pivoting into a longer form. (from R for Data Science)](images/tidyverse/tidy-8.png)
+![Pivoting into a longer form. (from R for Data Science)](images/tidy-8.png)
 -->
 </div>
 <div id="section-section-11" class="section level3">
@@ -538,7 +538,7 @@ column, in this case, the accuracy of the response
 <p>We can compare this data frame to <code>sgf</code> and see that we’ve
 recovered the original long form.</p>
 <!--
-![Pivoting into a wider form. (from R for Data Science)](images/tidyverse/tidy-9.png)
+![Pivoting into a wider form. (from R for Data Science)](images/tidy-9.png)
 -->
 </div>
 <div id="section-section-12" class="section level3">
@@ -570,8 +570,8 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,
                       exercise.cap = "Exercise")
 
 mtcars <- as_tibble(mtcars)
-sgf <- read_csv("www/data/tidyverse/stiller_scales_data.csv")
-sgf_wide <- read_csv("www/data/tidyverse/sgf_wide.csv")
+sgf <- read_csv("www/data/stiller_scales_data.csv")
+sgf_wide <- read_csv("www/data/sgf_wide.csv")
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
@@ -606,9 +606,8 @@ output$`tutorial-exercise-tidyverse-pipes-exercise-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "tidyverse-pipes-exercise", global_setup = structure(c("library(tidyverse)", 
 "library(learnr)", "knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,", 
 "                      exercise.cap = \"Exercise\")", "", "mtcars <- as_tibble(mtcars)", 
-"sgf <- read_csv(\"www/data/tidyverse/stiller_scales_data.csv\")", 
-"sgf_wide <- read_csv(\"www/data/tidyverse/sgf_wide.csv\")"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = "gpm <- function (mpg) 1 / mpg", 
+"sgf <- read_csv(\"www/data/stiller_scales_data.csv\")", "sgf_wide <- read_csv(\"www/data/sgf_wide.csv\")"
+), chunk_opts = list(label = "setup", include = FALSE)), setup = "gpm <- function (mpg) 1 / mpg", 
     chunks = list(list(label = "tidyverse-pipe-gpm", code = "gpm <- function (mpg) 1 / mpg", 
         opts = list(label = "\"tidyverse-pipe-gpm\""), engine = "r"), 
         list(label = "tidyverse-pipes-exercise", code = "round(mean(gpm(mtcars$mpg)), digits = 2)", 
@@ -652,10 +651,9 @@ output$`tutorial-exercise-tidyverse-filter-exercise-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "tidyverse-filter-exercise", global_setup = structure(c("library(tidyverse)", 
 "library(learnr)", "knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,", 
 "                      exercise.cap = \"Exercise\")", "", "mtcars <- as_tibble(mtcars)", 
-"sgf <- read_csv(\"www/data/tidyverse/stiller_scales_data.csv\")", 
-"sgf_wide <- read_csv(\"www/data/tidyverse/sgf_wide.csv\")"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "tidyverse-filter-exercise", code = "\n\n", 
+"sgf <- read_csv(\"www/data/stiller_scales_data.csv\")", "sgf_wide <- read_csv(\"www/data/sgf_wide.csv\")"
+), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
+    chunks = list(list(label = "tidyverse-filter-exercise", code = "\n\n", 
         opts = list(label = "\"tidyverse-filter-exercise\"", 
             exercise = "TRUE"), engine = "r")), code_check = NULL, 
     error_check = NULL, check = NULL, solution = NULL, tests = NULL, 
@@ -695,20 +693,20 @@ output$`tutorial-exercise-tidyverse-mutate-exercise-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "tidyverse-mutate-exercise", global_setup = structure(c("library(tidyverse)", 
 "library(learnr)", "knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,", 
 "                      exercise.cap = \"Exercise\")", "", "mtcars <- as_tibble(mtcars)", 
-"sgf <- read_csv(\"www/data/tidyverse/stiller_scales_data.csv\")", 
-"sgf_wide <- read_csv(\"www/data/tidyverse/sgf_wide.csv\")"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "tidyverse-mutate-exercise", code = "", opts = list(
-        label = "\"tidyverse-mutate-exercise\"", exercise = "TRUE"), 
-        engine = "r")), code_check = NULL, error_check = NULL, 
-    check = NULL, solution = NULL, tests = NULL, options = list(
-        eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
-        tidy.opts = NULL, collapse = FALSE, prompt = FALSE, comment = NA, 
-        highlight = FALSE, size = "normalsize", background = "#F7F7F7", 
-        strip.white = TRUE, cache = 0, cache.path = "102-tidyverse_cache/html/", 
-        cache.vars = NULL, cache.lazy = TRUE, dependson = NULL, 
-        autodep = FALSE, cache.rebuild = FALSE, fig.keep = "high", 
-        fig.show = "asis", fig.align = "default", fig.path = "102-tidyverse_files/figure-html/", 
+"sgf <- read_csv(\"www/data/stiller_scales_data.csv\")", "sgf_wide <- read_csv(\"www/data/sgf_wide.csv\")"
+), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
+    chunks = list(list(label = "tidyverse-mutate-exercise", code = "", 
+        opts = list(label = "\"tidyverse-mutate-exercise\"", 
+            exercise = "TRUE"), engine = "r")), code_check = NULL, 
+    error_check = NULL, check = NULL, solution = NULL, tests = NULL, 
+    options = list(eval = FALSE, echo = TRUE, results = "markup", 
+        tidy = FALSE, tidy.opts = NULL, collapse = FALSE, prompt = FALSE, 
+        comment = NA, highlight = FALSE, size = "normalsize", 
+        background = "#F7F7F7", strip.white = TRUE, cache = 0, 
+        cache.path = "102-tidyverse_cache/html/", cache.vars = NULL, 
+        cache.lazy = TRUE, dependson = NULL, autodep = FALSE, 
+        cache.rebuild = FALSE, fig.keep = "high", fig.show = "asis", 
+        fig.align = "default", fig.path = "102-tidyverse_files/figure-html/", 
         dev = "png", dev.args = NULL, dpi = 192, fig.ext = "png", 
         fig.width = 6.5, fig.height = 4, fig.env = "figure", 
         fig.cap = NULL, fig.scap = NULL, fig.lp = "fig:", fig.subcap = NULL, 
@@ -737,10 +735,9 @@ output$`tutorial-exercise-tidyverse-combos-exercise-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "tidyverse-combos-exercise", global_setup = structure(c("library(tidyverse)", 
 "library(learnr)", "knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,", 
 "                      exercise.cap = \"Exercise\")", "", "mtcars <- as_tibble(mtcars)", 
-"sgf <- read_csv(\"www/data/tidyverse/stiller_scales_data.csv\")", 
-"sgf_wide <- read_csv(\"www/data/tidyverse/sgf_wide.csv\")"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "tidyverse-combos-exercise", code = "sgf_sub_means <- sgf |>\n  group_by(age_group, condition, subid) |>\n  summarise(sub_mean_correct = mean(correct))\n\nsgf_group_means <- sgf_sub_means |>\n  group_by(age_group, condition) |>\n  summarise(mean_correct = mean(sub_mean_correct),\n            sd_correct = sd(sub_mean_correct), \n            n_obs = length(sub_mean_correct),\n            sem = sd_correct / sqrt(n_obs),\n            ci = sem * 1.96)", 
+"sgf <- read_csv(\"www/data/stiller_scales_data.csv\")", "sgf_wide <- read_csv(\"www/data/sgf_wide.csv\")"
+), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
+    chunks = list(list(label = "tidyverse-combos-exercise", code = "sgf_sub_means <- sgf |>\n  group_by(age_group, condition, subid) |>\n  summarise(sub_mean_correct = mean(correct))\n\nsgf_group_means <- sgf_sub_means |>\n  group_by(age_group, condition) |>\n  summarise(mean_correct = mean(sub_mean_correct),\n            sd_correct = sd(sub_mean_correct), \n            n_obs = length(sub_mean_correct),\n            sem = sd_correct / sqrt(n_obs),\n            ci = sem * 1.96)", 
         opts = list(label = "\"tidyverse-combos-exercise\"", 
             exercise = "TRUE"), engine = "r")), code_check = NULL, 
     error_check = NULL, check = NULL, solution = NULL, tests = NULL, 
@@ -785,11 +782,10 @@ output$`tutorial-exercise-tidyverse-pivot-exercise-output` <- renderUI({
 learnr:::store_exercise_cache(structure(list(label = "tidyverse-pivot-exercise", global_setup = structure(c("library(tidyverse)", 
 "library(learnr)", "knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE,", 
 "                      exercise.cap = \"Exercise\")", "", "mtcars <- as_tibble(mtcars)", 
-"sgf <- read_csv(\"www/data/tidyverse/stiller_scales_data.csv\")", 
-"sgf_wide <- read_csv(\"www/data/tidyverse/sgf_wide.csv\")"), chunk_opts = list(
-    label = "setup", include = FALSE)), setup = NULL, chunks = list(
-    list(label = "tidyverse-pivot-exercise", code = "\n\n", opts = list(
-        label = "\"tidyverse-pivot-exercise\"", exercise = "TRUE"), 
+"sgf <- read_csv(\"www/data/stiller_scales_data.csv\")", "sgf_wide <- read_csv(\"www/data/sgf_wide.csv\")"
+), chunk_opts = list(label = "setup", include = FALSE)), setup = NULL, 
+    chunks = list(list(label = "tidyverse-pivot-exercise", code = "\n\n", 
+        opts = list(label = "\"tidyverse-pivot-exercise\"", exercise = "TRUE"), 
         engine = "r")), code_check = NULL, error_check = NULL, 
     check = NULL, solution = NULL, tests = NULL, options = list(
         eval = FALSE, echo = TRUE, results = "markup", tidy = FALSE, 
