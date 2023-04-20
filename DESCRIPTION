@@ -1,0 +1,10 @@
+Package: experimentology
+Type: Package
+Title: Materials for the textbook Experimentology
+Version: 0.1.0
+Author: Mika Braginsky <mika.br@gmail.com>
+Maintainer: Mika Braginsky <mika.br@gmail.com>
+Description: TODO
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
